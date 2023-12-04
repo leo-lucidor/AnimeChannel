@@ -12,11 +12,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Anime</a></li>
-                <li><a href="#">Manga</a></li>
+                <li><a href="{{ url_for('home') }}">Accueil</a></li>
                 <li><a href="#">Connexion</a></li>
-                <li><a href="#">Inscription</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +22,7 @@
         {% endblock %}
     </main>
     <footer>
-        <p>© 2020 - Anime Channel</p>
+        <p>© 2023 - Anime Channel</p>
     </footer>
     {% block script %}
     {% endblock %}
