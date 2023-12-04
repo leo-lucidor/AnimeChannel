@@ -2,7 +2,7 @@ create table Utilisateur (
     idUtilisateur int not null auto_increment,
     nom varchar(255) not null,
     prenom varchar(255) not null,
-    email varchar(255) not null,
+    email varchar(255) not null unique,
     motDePasse varchar(255) not null,
     primary key (idUtilisateur)
 );
