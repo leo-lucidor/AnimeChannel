@@ -28,7 +28,21 @@ class Utilisateur:
                 res.append(row)
             return result
         
-
+class MotsDePasse:
+    class Get:
+        def get_mdp_by_id(cnx, id):
+            result = cnx.execute(text("select motDePasse from Utilisateur where idUtilisateur = " + str(id) + ";"))
+            for row in result:
+                print(row[0])
+                return row[0]
+            return result
+        
+        def get_mdp_by_email(cnx, email):
+            result = cnx.execute(text("select motDePasse from Utilisateur where email =" + email + ";"))
+            for row in result:
+                print(row[0])
+                return row[0]
+            return result
 
 class Anime:
     class Get:
