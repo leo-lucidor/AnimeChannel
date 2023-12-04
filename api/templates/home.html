@@ -3,8 +3,19 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 {% block content %}
-{% if 'utilisateur' in sesison %}
-<h1>Accueil</h1>
+{% if 'utilisateur' in session %}
+<div class="container-liste-anime">
+    <ul class="liste-anime">
+        {% for anime in animes %}
+        <section class="section-anime">
+            <h3>{{ anime.nom }}</h3>
+            <img src="{{ url_for('static', filename='img/' + anime.image) }}" alt="{{ anime.nom }}">
+            <p>{{ anime.description }}</p>
+            <a href="{{ url_for('anime', id=anime.id) }}">Voir l'anime</a>
+        </section>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 {% if 'utilisateur' not in session %}
 <div class="container-all-login">
