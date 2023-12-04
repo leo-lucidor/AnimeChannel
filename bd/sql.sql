@@ -17,12 +17,18 @@ create table Anime (
     idAnime int not null auto_increment,
     nom varchar(255) not null,
     resumeAnime varchar(3000) not null,
-    lien varchar(255) not null,
     idCategorie int not null,
     primary key (idAnime),
     foreign key (idCategorie) references CategorieAnime(idCategorie)
 );
 
-
-
+create table Episode (
+    idEpisode int not null auto_increment,
+    nom varchar(255) not null,
+    numeroEpisode int not null,
+    idAnime int not null,
+    lienEpisode varchar(255) not null,
+    primary key (idEpisode),
+    foreign key (idAnime) references Anime(idAnime)
+);
 
