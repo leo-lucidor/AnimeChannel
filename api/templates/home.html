@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+{% block content %}
+<h1>Accueil</h1>
+{% if 'utilisateur' in sesison %}
+
+{% endif %}
+{% if 'utilisateur' not in session %}
+<form action="{{ url_for('home') }}" role="form" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.email(size=50, class_="form-control element", placeholder="Email") }}
+    {{ form.password(size=50, class_="form-control element", placeholder="Mot de passe") }}
+    <input type="submit" value="Se Connecter" class="element">
+</form>
+{% endif %}
+{% endblock %}

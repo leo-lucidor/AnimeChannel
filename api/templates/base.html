@@ -12,8 +12,10 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{{ url_for('home') }}">Accueil</a></li>
-                <li><a href="#">Connexion</a></li>
+                <li><a href="{{ url_for('home') }}">AnimeChannel</a></li>
+                {% if 'utilisateur' in session %}
+                <li><a href="{{ url_for('logout') }}">Deconnexion</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
