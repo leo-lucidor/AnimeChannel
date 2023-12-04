@@ -51,15 +51,15 @@ class Anime:
     class Get:
         def get_all_anime(cnx):
             res =  []
-            result = cnx.execute(text("select * from Anime;"))
+            result = cnx.execute(text("select * from Anime natural join CategorieAnime;"))
             for row in result:
                 print(row)
                 res.append(row)
-            return result
+            return res
         
         def get_anime_by_id(cnx, id):
             res =  []
-            result = cnx.execute(text("select * from Anime where idAnime = :id;"), id=id)
+            result = cnx.execute(text("select * from Anime where idAnime = '" + str(id) + "';"))
             for row in result:
                 print(row)
                 res.append(row)
