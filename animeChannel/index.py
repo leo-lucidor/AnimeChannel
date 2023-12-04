@@ -13,6 +13,7 @@ from flask import render_template, url_for, redirect, request, session, jsonify,
 def home():
     return render_template('home.html')
 
-@app.route('/about')
-def about():
-    return 'About'
+
+@app.route('/anime/<int:id>')
+def anime(id):
+    return render_template('anime.html', id=id)
