@@ -5,8 +5,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, HiddenField, FileField, SubmitField, SelectField, TextAreaField, DateField, IntegerField, PasswordField
 from wtforms.validators import DataRequired, Optional
 # from hashlib import sha256
-# from .connexionPythonSQL import *
-# from .requette import *
+from .connexionPythonSQL import *
+from .requette import *
+
+cnx = ouvrir_connexion()
 
 # form
 
@@ -94,11 +96,13 @@ def home():
     form = LoginForm()
     if form.validate_on_submit():
         email, password = form.get_data()
-        if email == None and password == None:
-            return redirect(url_for('home'))
-        else:
-            session['utilisateur'] = email, password
-            return render_template('home.html', form=form, name=email, animes=animes)
+        if email != None and password != None:   
+            user = Utilisateur.Get.get_utlisateurs_by_mail(cnx, email)
+            print(user[4])
+            print(password)
+            if user[4] == password:
+                session['utilisateur'] = email, password
+        return render_template('home.html', form=form, name=Utilisateur.Get.get_nom_with_email(cnx, email), animes=animes)
     return render_template('home.html', form=form, animes=animes)
 
 

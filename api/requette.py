@@ -1,4 +1,4 @@
-from connexionPythonSQL import *
+from .connexionPythonSQL import *
 from sqlalchemy import text
 cnx = ouvrir_connexion()
 
@@ -21,11 +21,14 @@ class Utilisateur:
             return result
         
         def get_utlisateurs_by_mail(cnx, email):
-            res =  []
-            result = cnx.execute(text("select * from Utilisateur where email = :email;"), email=email)
+            result = cnx.execute(text("select * from Utilisateur where email = '" + email + "';"))
             for row in result:
-                print(row)
-                res.append(row)
+                return row
+
+        def get_nom_with_email(cnx, email):
+            result = cnx.execute(text("select nom from Utilisateur where email = '" + email + "';"))
+            for row in result:
+                return row[0]
             return result
         
 class MotsDePasse:
@@ -73,14 +76,6 @@ class Anime:
 
 class Episode:
     class Get:
-        def get_all_episode(cnx):
-            res =  []
-            result = cnx.execute(text("select * from Episode;"))
-            for row in result:
-                print(row)
-                res.append(row)
-            return result
-        
         def get_episode_by_id(cnx, id):
             res =  []
             result = cnx.execute(text("select * from Episode where idEpisode = :id;"), id=id)
