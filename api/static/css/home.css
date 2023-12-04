@@ -63,6 +63,11 @@
     transition: .2s;
 }
 
+.form-group p {
+    text-align: center;
+    flex-basis: 100%;
+}
+
 /* fiche anime */
 
 .liste-anime {

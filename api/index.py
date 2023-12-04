@@ -98,11 +98,12 @@ def home():
         email, password = form.get_data()
         if email != None and password != None:   
             user = Utilisateur.Get.get_utlisateurs_by_mail(cnx, email)
-            print(user[4])
-            print(password)
-            if user[4] == password:
-                session['utilisateur'] = email, password
-        return render_template('home.html', form=form, name=Utilisateur.Get.get_nom_with_email(cnx, email), animes=animes)
+            if user != None:
+                if user[4] == password:
+                    session['utilisateur'] = email, password, Utilisateur.Get.get_nom_with_email(cnx, email)
+            else:
+                return render_template('home.html', form=form, erreur="Email ou mot de passe incorrect")
+        return render_template('home.html', form=form, animes=animes)
     return render_template('home.html', form=form, animes=animes)
 
 
