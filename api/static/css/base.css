@@ -22,3 +22,8 @@ nav ul {
     justify-content: space-between;
     align-items: center;
 }
+
+.logo {
+    max-width: 200px;
+    max-height: 200px;
+}
