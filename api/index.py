@@ -29,7 +29,7 @@ def home():
             return redirect(url_for('home'))
         else:
             session['utilisateur'] = email, password
-            return redirect(url_for('home'))
+            return render_template('home.html', form=form, name=email)
     return render_template('home.html', form=form)
 
 

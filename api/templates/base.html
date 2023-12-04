@@ -14,7 +14,8 @@
             <ul>
                 <li><a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="AnimeChannel"></a></li>
                 {% if 'utilisateur' in session %}
-                <li><a href="{{ url_for('logout') }}">Deconnexion</a></li>
+                <li><p class="name-title">Bienvenue {{ name }}</p></li>
+                <li><a href="{{ url_for('logout') }}"><img class="deconnexion" src="{{ url_for('static', filename='img/se-deconnecter.png') }}" alt="deconnexion"></a></li>
                 {% endif %}
             </ul>
         </nav>

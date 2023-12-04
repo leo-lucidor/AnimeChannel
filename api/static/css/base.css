@@ -1,7 +1,7 @@
 body {
     background-color: #292727;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
@@ -18,12 +18,37 @@ ul {
 }
 
 nav ul {
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 2em;
+}
+
+.name-title {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
     max-width: 200px;
     max-height: 200px;
+}
+
+.deconnexion {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+
+/* footer */
+
+footer {
+    margin-top: 14vh;
+    background-color: #fe3030;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 1em;
 }

@@ -3,16 +3,28 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 {% block content %}
-<h1>Accueil</h1>
 {% if 'utilisateur' in sesison %}
-
+<h1>Accueil</h1>
 {% endif %}
 {% if 'utilisateur' not in session %}
-<form action="{{ url_for('home') }}" role="form" method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.email(size=50, class_="form-control element", placeholder="Email") }}
-    {{ form.password(size=50, class_="form-control element", placeholder="Mot de passe") }}
-    <input type="submit" value="Se Connecter" class="element">
-</form>
+<div class="container-all-login">
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form class="form-login" action="{{ url_for('home') }}" role="form" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                {{ form.email(size=50, class_="form-control element", placeholder="Email") }}
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                {{ form.password(size=50, class_="form-control element", placeholder="Mot de passe") }}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Se Connecter" class="element">
+            </div>
+        </form>
+    </div>
+</div>
 {% endif %}
 {% endblock %}
