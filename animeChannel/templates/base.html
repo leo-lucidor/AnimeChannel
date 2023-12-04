@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block style %}
+    {% endblock %}
+    <title>Anime Channel - Accueil</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Anime</a></li>
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">Connexion</a></li>
+                <li><a href="#">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2020 - Anime Channel</p>
+    </footer>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>
