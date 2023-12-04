@@ -27,7 +27,7 @@ def home():
             'id': 1,
             'titre': 'Naruto',
             'description': 'Naruto est un garçon un peu spécial. Il est toujours tout seul et son caractère fougueux ne l\'aide pas à se faire apprécier dans son village. Malgré cela, il garde au fond de lui une ambition: celle de devenir un "maître Hokage", la plus haute distinction dans l\'ordre des ninjas, et ainsi obtenir la reconnaissance de ses pairs mais cela ne sera pas de tout repos...',
-            'image': 'https://www.nautiljon.com/images/anime/00/00/naruto_1.jpg',
+            'image': 'https://photos.tf1.fr/780/780/perso-showpage-naruto-70c311-7cdbc0-0@1x.png',
             'date': '2002',
             'auteur': 'Masashi Kishimoto',
             'genre': 'Action, Aventure, Comédie, Drame, Fantasy, Shônen',

@@ -62,3 +62,36 @@
     background-color: #a91515;
     transition: .2s;
 }
+
+/* fiche anime */
+
+.liste-anime {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-anime {
+    max-width: 150px;
+    max-height: 250px;
+}
+
+.section-anime img {
+    max-width: 150px;
+    max-height: 250px;
+}
+
+.section-anime h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.section-anime p {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+}
