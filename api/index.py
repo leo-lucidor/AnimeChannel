@@ -25,7 +25,7 @@ class LoginForm(FlaskForm):
 @app.route('/', methods=['GET', 'POST'])
 def home():
     liste_animes = Anime.Get.get_all_anime(cnx)
-    
+    print(liste_animes)
     form = LoginForm()
     if form.validate_on_submit():
         email, password = form.get_data()
@@ -40,10 +40,19 @@ def home():
     return render_template('home.html', form=form, animes=liste_animes)
 
 
-@app.route('/anime/<int:id>')
-def anime(id):
+@app.route('/anime/<int:id>/<int:numeroEpisode>')
+def anime(id, numeroEpisode):
     anime = Anime.Get.get_anime_by_id(cnx, id)
-    return render_template('anime.html', anime=anime) 
+    episode = Episode.Get.get_episode_by_id_and_numeroEpisode(cnx, id, numeroEpisode)
+    liste_numero_episode = Episode.Get.get_all_episode(cnx, id)
+    print(liste_numero_episode)
+    return render_template('anime.html', anime=anime, episode=episode, liste_numero_episode=liste_numero_episode, numeroEpisode=numeroEpisode)
+
+@app.route('/episode/<int:id>')
+def episode(id):
+    episodes = Episode.Get.get_all_episode(cnx, id)
+    print(episodes)
+    return render_template('episode.html', episodes=episodes)
 
 @app.route('/logout')
 def logout():

@@ -7,11 +7,11 @@
 <div class="container-liste-anime">
     <ul class="liste-anime">
         {% for anime in animes %}
-        <a href="{{ url_for('anime', id=anime[0]) }}">
+        <a href="{{ url_for('episode', id=anime[1]) }}">
             <section class="section-anime">
                 <h3>{{ anime[2] }}</h3>
                 <p>{{ anime[4] }}</p>
-                <img src="{{ anime.image }}" alt="{{ anime.nom }}">
+                <img src="https://www.manga-sanctuary.com/img/f/45098-re-zero-kara-hajimeru-isekai-seikatsu.jpg" alt="">
             </section>
         </a>
         {% endfor %}

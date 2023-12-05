@@ -3,21 +3,22 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/anime.css') }}">
 {% endblock %}
 {% block content %}
-<h1>{{ anime.title }}</h1>
 <div class="anime">
-    <div class="anime__image">
-        <img src="#" alt="image">
-    </div>
-    <div class="anime__info">
-        <p class="anime__info__description">{{ anime.description }}</p>
-        <p class="anime__info__genre">Genre : {{ anime.genre }}</p>
-        <p class="anime__info__author">Auteur : {{ anime.author }}</p>
-        <p class="anime__info__studio">Studio : {{ anime.studio }}</p>
-        <p class="anime__info__release">Date de sortie : {{ anime.release }}</p>
-        <p class="anime__info__season">Saison : {{ anime.season }}</p>
-        <p class="anime__info__episode">Nombre d'épisodes : {{ anime.episode }}</p>
-        <p class="anime__info__status">Statut : {{ anime.status }}</p>
-        <p class="anime__info__note">Note : {{ anime.note }}</p>
+    <!-- <div class="choix-episode">
+        <select id="combo-box" class="combo-box" name="episode" placeholder="Choisir un épisode">
+            {% for episode in liste_numero_episode %}
+            <option value="{{ episode[0] }}">{{ episode[0] }}</option>
+            {% endfor %}
+        </select>
+    </div> -->
+
+    <h1>episode {{ numeroEpisode }}</h1>
+
+    <div class="anime__video">
+        <iframe width="800" height="500" src="{{ episode[4] }}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
     </div>
 </div>
 {% endblock %}
