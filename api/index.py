@@ -8,7 +8,15 @@ from wtforms.validators import DataRequired, Optional
 from .connexionPythonSQL import *
 from .requette import *
 
+
+from flask import Flask
+import os.path
+from flask_sqlalchemy import SQLAlchemy
+
 cnx = ouvrir_connexion()
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = "5bde79f0-262d-43b0-a194-61866f36fd11"
 
 # form
 
