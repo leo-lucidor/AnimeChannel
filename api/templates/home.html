@@ -3,16 +3,41 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 {% block content %}
-<h1>Accueil</h1>
-{% if 'utilisateur' in sesison %}
-
+{% if 'utilisateur' in session %}
+<div class="container-liste-anime">
+    <ul class="liste-anime">
+        {% for anime in animes %}
+        <a href="{{ url_for('episode', id=anime[1]) }}">
+            <section class="section-anime">
+                <h3>{{ anime[2] }}</h3>
+                <p>{{ anime[4] }}</p>
+                <img src="https://www.manga-sanctuary.com/img/f/45098-re-zero-kara-hajimeru-isekai-seikatsu.jpg" alt="">
+            </section>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 {% if 'utilisateur' not in session %}
-<form action="{{ url_for('home') }}" role="form" method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.email(size=50, class_="form-control element", placeholder="Email") }}
-    {{ form.password(size=50, class_="form-control element", placeholder="Mot de passe") }}
-    <input type="submit" value="Se Connecter" class="element">
-</form>
+<div class="container-all-login">
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form class="form-login" action="{{ url_for('home') }}" role="form" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                {{ form.email(size=50, class_="form-control element", placeholder="Email") }}
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                {{ form.password(size=50, class_="form-control element", placeholder="Mot de passe") }}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Se Connecter" class="element">
+                <p>{{ erreur }}</p>
+            </div>
+        </form>
+    </div>
+</div>
 {% endif %}
 {% endblock %}
