@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/anime.css') }}">
+{% endblock %}
+{% block content %}
+<div class="anime">
+    <!-- <div class="choix-episode">
+        <select id="combo-box" class="combo-box" name="episode" placeholder="Choisir un épisode">
+            {% for episode in liste_numero_episode %}
+            <option value="{{ episode[0] }}">{{ episode[0] }}</option>
+            {% endfor %}
+        </select>
+    </div> -->
+
+    <h1>episode {{ numeroEpisode }}</h1>
+
+    <div class="anime__video">
+        <iframe width="800" height="500" src="{{ episode[4] }}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+{% endblock %}

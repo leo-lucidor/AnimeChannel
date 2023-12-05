@@ -1,0 +1,110 @@
+/* formulaire */
+
+.container-all-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #fe3030;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    margin: 0 0 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group label {
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 5px;
+    flex-basis: 100%;
+}
+
+.form-group input {
+    width: 35vw;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex-basis: 100%;
+}
+
+.form-group input[type="submit"] {
+    background-color: #9e3f3f;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    max-width: 20vw;
+    transition: .2s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #a91515;
+    transition: .2s;
+}
+
+.form-group p {
+    text-align: center;
+    flex-basis: 100%;
+}
+
+/* fiche anime */
+
+.liste-anime {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-anime {
+    width: 200px;
+    height: 500px;
+    background-color: #fe3030;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-anime img {
+    width: 200px;
+    height: 250px;
+}
+
+.section-anime h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.section-anime p {
+    text-align: center;
+    font-size: 34px;
+    color: #fff;
+    margin: 0;
+}

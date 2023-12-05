@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    {% block style %}
+    {% endblock %}
+    <title>Anime Channel - Accueil</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="AnimeChannel"></a></li>
+                {% if 'utilisateur' in session %}
+                <li><p class="name-title">Vous êtes connecter en tant que  {{ session['utilisateur'][2] }}</p></li>
+                <li><a href="{{ url_for('logout') }}"><img class="deconnexion" src="{{ url_for('static', filename='img/se-deconnecter.png') }}" alt="deconnexion"></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2023 - Anime Channel</p>
+    </footer>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

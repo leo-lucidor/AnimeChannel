@@ -1,0 +1,31 @@
+.anime {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    flex-basis: 100%;
+}
+
+h1 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/* .choix-episode {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+} */
+
+/* select {
+    background-color: #fe3030;
+    color: #333333;
+    border: 0;
+    border-radius: 4px;
+    font-size: 14px;
+} */
